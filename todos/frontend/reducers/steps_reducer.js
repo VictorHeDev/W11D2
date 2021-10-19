@@ -1,21 +1,21 @@
 import { RECEIVE_STEPS, RECEIVE_STEP, REMOVE_STEP } from '../actions/step_actions';
 
-const initialState = {
-  1: {
-    id: 1,
-    title: 'wash wheels',
-    done: false,
-    todo_id: 1
-  },
-  2: {
-    id: 2,
-    title: 'wash windows',
-    done: true,
-    todo_id: 1
-  },
-};
+// const initialState = {
+//   1: {
+//     id: 1,
+//     title: 'wash wheels',
+//     done: false,
+//     todo_id: 1
+//   },
+//   2: {
+//     id: 2,
+//     title: 'wash windows',
+//     done: true,
+//     todo_id: 1
+//   },
+// };
 
-const stepsReducer = (state = initialState, action) => {
+const stepsReducer = (state = {}, action) => {
   let newSteps = {};
   switch (action.type) {
     case RECEIVE_STEPS:
