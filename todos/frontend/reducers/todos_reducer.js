@@ -21,7 +21,7 @@ const todosReducer = (state = initialState, action) => {
 
   switch (action.type) {
     case RECEIVE_TODOS:
-    // state.todos = acti
+      state.todos = acti;
 
     default:
       return state;
