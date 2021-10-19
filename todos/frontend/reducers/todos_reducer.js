@@ -1,4 +1,3 @@
-import { bindActionCreators } from 'redux';
 import { RECEIVE_TODOS, RECEIVE_TODO, REMOVE_TODO } from '../actions/todo_actions';
 
 const initialState = {
@@ -17,8 +16,6 @@ const initialState = {
 };
 
 const todosReducer = (state = initialState, action) => {
-  // Object.freeze(state);
-  // const nextState
   let newTodos = {};
   switch (action.type) {
     case RECEIVE_TODOS:
@@ -31,7 +28,6 @@ const todosReducer = (state = initialState, action) => {
       newTodos[action.todo.id] = action.todo;
       return newTodos;
     case REMOVE_TODO:
-      consle.log(action.todo);
       for (let [k, v] of Object.entries(state)) {
         if (v.id !== action.todo.id) {
           newTodos[k] = v;
