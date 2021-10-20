@@ -32,11 +32,8 @@ const todosReducer = (state = initialState, action) => {
       newTodos[action.todo.id] = action.todo;
       return newTodos;
     case REMOVE_TODO:
-      for (let [k, v] of Object.entries(state)) {
-        if (v.id !== action.todo.id) {
-          newTodos[k] = v;
-        }
-      }
+      newTodos = Object.assign({}, state);
+      delete newTodos[action.todo.id];
       return newTodos;
     default:
       return state;
