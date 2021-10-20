@@ -19,6 +19,7 @@ const TodoForm = ({ receiveTodo }) => {
     receiveTodo({
       title,
       body,
+      done: false,
       id: uniqueId()
     })
   }
