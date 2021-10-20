@@ -1,21 +1,26 @@
-import { RECEIVE_STEPS, RECEIVE_STEP, REMOVE_STEP } from '../actions/step_actions';
+import {
+  RECEIVE_STEPS,
+  RECEIVE_STEP,
+  REMOVE_STEP,
+} from '../actions/step_actions';
 
-// const initialState = {
-//   1: {
-//     id: 1,
-//     title: 'wash wheels',
-//     done: false,
-//     todo_id: 1
-//   },
-//   2: {
-//     id: 2,
-//     title: 'wash windows',
-//     done: true,
-//     todo_id: 1
-//   },
-// };
+// testing testing
+const initialState = {
+  1: {
+    id: 1,
+    title: 'wash wheels',
+    done: false,
+    todoId: 1,
+  },
+  2: {
+    id: 2,
+    title: 'wash windows',
+    done: true,
+    todoId: 1,
+  },
+};
 
-const stepsReducer = (state = {}, action) => {
+const stepsReducer = (state = initialState, action) => {
   let newSteps = {};
   switch (action.type) {
     case RECEIVE_STEPS:
@@ -28,11 +33,8 @@ const stepsReducer = (state = {}, action) => {
       newSteps[action.step.id] = action.step;
       return newSteps;
     case REMOVE_STEP:
-      for (let [k, v] of Object.entries(state)) {
-        if (v.id !== action.step.id) {
-          newSteps[k] = v;
-        }
-      }
+      newSteps = Object.assign({}, state);
+      delete newSteps[action.step.id];
       return newSteps;
     default:
       return state;

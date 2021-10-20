@@ -1,4 +1,4 @@
-
+import StepListContainer from "../step_list/StepListContainer";
 
 const TodoDetailView = ({ todo, removeTodo }) => {
 
@@ -10,6 +10,7 @@ const TodoDetailView = ({ todo, removeTodo }) => {
     <div>
       {todo.body}
       <button onClick={handleDelete}>Delete</button>
+      <StepListContainer />
     </div>
   )
 }
