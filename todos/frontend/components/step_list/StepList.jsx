@@ -1,6 +1,7 @@
 import StepListItemContainer from './StepListItemContainer'
+import StepForm from './StepForm'
 
-const StepList = ({ steps, receiveStep }) => {
+const StepList = ({ todoId, steps, receiveStep }) => {
   return (
     <div>
       <ul>
@@ -8,6 +9,7 @@ const StepList = ({ steps, receiveStep }) => {
           <StepListItemContainer key={step.id} step={step} />
         ))}
       </ul>
+      <StepForm receiveStep={receiveStep} todoId={todoId} />
     </div>
   )
 }

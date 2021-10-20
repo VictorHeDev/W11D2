@@ -11,7 +11,7 @@ const StepListItem = ({ step, receiveStep, removeStep }) => {
 
   return (
     <li>
-      {step.title}
+      {step.title} - {step.description}
       <button onClick={toggleStep}>Toggle Status</button>
       {step.done ? "Done" : "Not done"}
       <button onClick={handleDelete}>Delete</button>
