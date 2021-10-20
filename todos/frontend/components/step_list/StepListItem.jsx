@@ -2,7 +2,7 @@ const StepListItem = ({ step, receiveStep, removeStep }) => {
 
   const toggleStep = () => {
     step.done = !step.done;
-    receiveStep(step);
+    receiveStep(toggled);
   }
 
   const handleDelete = () => {

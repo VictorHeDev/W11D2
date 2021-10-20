@@ -9,7 +9,6 @@ import { allTodos } from './reducers/selectors';
 const store = configureStore();
 render(<Root store={store} />, document.getElementById("root"));
 
-
 // window.store = configureStore();
 
 // const newTodos = [{ id: 1, title: 'Learn Redux', body: 'It is fundamental', done: false }, { id: 2 }];

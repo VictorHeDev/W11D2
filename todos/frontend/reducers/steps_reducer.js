@@ -24,8 +24,8 @@ const stepsReducer = (state = initialState, action) => {
   let newSteps = {};
   switch (action.type) {
     case RECEIVE_STEPS:
-      for (let td of action.steps) {
-        newSteps[td.id] = td;
+      for (let step of action.steps) {
+        newSteps[step.id] = step;
       }
       return newSteps;
     case RECEIVE_STEP:
