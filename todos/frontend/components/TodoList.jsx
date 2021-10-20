@@ -1,8 +1,12 @@
-const TodoList = () => {
+const TodoList = ({ todos }) => {
   return (
-    <div>
-
-    </div>
+    <ul>
+      { todos.map(todo => {
+        return (
+          <li>{todo.title}</li>
+        )
+      })}
+    </ul>
   )
 }
 
