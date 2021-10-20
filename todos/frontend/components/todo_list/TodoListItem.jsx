@@ -1,19 +1,24 @@
-const TodoListItem = ({ todo, receiveTodo, removeTodo }) => {
-  const handleDelete = () => {
-    removeTodo(todo);
-  }
+import TodoDetailViewContainer from "./TodoDetailViewContainer";
+import { useState } from 'react';
+
+
+const TodoListItem = ({ todo, receiveTodo }) => {
+  const [detail, setDetail] = useState(false);
 
   const toggleTodo = () => {
     todo.done = !todo.done;
     receiveTodo(todo);
   }
 
+
   return (
     <li>
-      {todo.title}
-      <button onClick={handleDelete}>Delete</button>
+      <div onClick={() => setDetail(!detail)}>
+        {todo.title}
+      </div>
       <button onClick={toggleTodo}>Toggle Status</button>
       {todo.done ? "Done" : "Not done"}
+      { detail && <TodoDetailViewContainer todo={todo} /> }
     </li>
   )
 }

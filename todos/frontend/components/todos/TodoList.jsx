@@ -1,12 +1,12 @@
 import TodoListItem from '../todo_list/TodoListItem';
 import TodoForm from '../todo_list/TodoForm';
 
-const TodoList = ({ todos, receiveTodo, removeTodo }) => {
+const TodoList = ({ todos, receiveTodo }) => {
   return (
     <div>
       <ul>
         { todos.map(todo => (
-          <TodoListItem key={todo.id} todo={todo} receiveTodo={receiveTodo} removeTodo={removeTodo} />
+          <TodoListItem key={todo.id} todo={todo} receiveTodo={receiveTodo} />
         ))}
       </ul>
       <TodoForm receiveTodo={receiveTodo} />
