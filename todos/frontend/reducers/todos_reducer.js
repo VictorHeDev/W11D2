@@ -20,21 +20,20 @@ const initialState = {
 };
 
 const todosReducer = (state = initialState, action) => {
-  let newTodos = {};
+  let newState = {};
   switch (action.type) {
     case RECEIVE_TODOS:
       for (let td of action.todos) {
-        newTodos[td.id] = td;
+        newState[td.id] = td;
       }
-      return newTodos;
+      return newState;
     case RECEIVE_TODO:
-      newTodos = Object.assign({}, state);
-      newTodos[action.todo.id] = action.todo;
-      return newTodos;
+      newState = Object.assign({}, state, {[action.todo.id]: action.todo});
+      return newState;
     case REMOVE_TODO:
-      newTodos = Object.assign({}, state);
-      delete newTodos[action.todo.id];
-      return newTodos;
+      newState = Object.assign({}, state);
+      delete newState[action.todo.id];
+      return newState;
     default:
       return state;
   }

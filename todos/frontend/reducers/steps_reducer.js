@@ -19,25 +19,24 @@ const initialState = {
     description: '22222',
     done: true,
     todoId: 1,
-  },aasdasd
+  }
 };
 
 const stepsReducer = (state = initialState, action) => {
-  let newSteps = {};
+  let newState = {};
   switch (action.type) {
     case RECEIVE_STEPS:
       for (let step of action.steps) {
-        newSteps[step.id] = step;
+        newState[step.id] = step;
       }
-      return newSteps;
+      return newState;
     case RECEIVE_STEP:
-      newSteps = Object.assign({}, state);
-      newSteps[action.step.id] = action.step;
-      return newSteps;
+      newState = Object.assign({}, state, {[action.step.id]: action.step});
+      return newState;
     case REMOVE_STEP:
-      newSteps = Object.assign({}, state);
-      delete newSteps[action.step.id];
-      return newSteps;
+      newState = Object.assign({}, state);
+      delete newState[action.step.id];
+      return newState;
     default:
       return state;
   }

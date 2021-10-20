@@ -6,8 +6,12 @@ const TodoListItem = ({ todo, receiveTodo }) => {
   const [detail, setDetail] = useState(false);
 
   const toggleTodo = () => {
-    todo.done = !todo.done;
-    receiveTodo(todo);
+    const toggledTodo = Object.assign(
+      {},
+      todo,
+      { done: !todo.done}
+    );
+    receiveTodo(toggledTodo);
   }
 
 
