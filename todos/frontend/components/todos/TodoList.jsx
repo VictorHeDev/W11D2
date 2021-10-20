@@ -5,8 +5,8 @@ const TodoList = ({ todos, receiveTodo }) => {
   return (
     <div>
       <ul>
-        { todos.map((todo, idx) => (
-          <TodoListItem key={idx} todo={todo} />
+        { todos.map(todo => (
+          <TodoListItem key={todo.id} todo={todo} />
         ))}
       </ul>
       <TodoForm receiveTodo={receiveTodo} />

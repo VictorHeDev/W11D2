@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { uniqueId } from '../../util';
 
 
 const TodoForm = ({ receiveTodo }) => {
@@ -17,13 +18,13 @@ const TodoForm = ({ receiveTodo }) => {
     e.preventDefault();
     receiveTodo({
       title,
-      body
+      body,
+      id: uniqueId()
     })
   }
 
-
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <label>Title:
         <input type="text" value={title} onChange={handleTitleChange} />
       </label>
@@ -32,7 +33,7 @@ const TodoForm = ({ receiveTodo }) => {
         <textarea cols="30" rows="10" onChange={handleBodyChange} value={body} ></textarea>
       </label>
       <br />
-      {/* <button onSubmit={}>Submit</button> */}
+      <button>Submit</button>
     </form>
   )
 }
