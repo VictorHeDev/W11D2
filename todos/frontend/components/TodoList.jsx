@@ -1,11 +1,11 @@
+import TodoListItem from './TodoListItem';
+
 const TodoList = ({ todos }) => {
   return (
     <ul>
-      { todos.map(todo => {
-        return (
-          <li>{todo.title}</li>
-        )
-      })}
+      { todos.map((todo, idx) => (
+        <TodoListItem key={idx} todo={todo} />
+      ))}
     </ul>
   )
 }

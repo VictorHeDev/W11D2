@@ -8,8 +8,6 @@ import { allTodos } from './reducers/selectors';
 
 const store = configureStore();
 render(<Root store={store} />, document.getElementById("root"));
-console.log(allTodos(store.getState()));
-
 
 
 // window.store = configureStore();
