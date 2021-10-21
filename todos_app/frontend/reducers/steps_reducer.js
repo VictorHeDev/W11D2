@@ -4,25 +4,7 @@ import {
   REMOVE_STEP,
 } from '../actions/step_actions';
 
-// testing testing
-const initialState = {
-  1: {
-    id: 1,
-    title: 'wash wheels',
-    description: '1111111',
-    done: false,
-    todoId: 1,
-  },
-  2: {
-    id: 2,
-    title: 'wash windows',
-    description: '22222',
-    done: true,
-    todoId: 1,
-  }
-};
-
-const stepsReducer = (state = initialState, action) => {
+const stepsReducer = (state = {}, action) => {
   let newState = {};
   switch (action.type) {
     case RECEIVE_STEPS:
