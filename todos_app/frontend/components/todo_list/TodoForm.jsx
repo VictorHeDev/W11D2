@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { uniqueId } from '../../util';
 
 
-const TodoForm = ({ receiveTodo }) => {
+const TodoForm = ({ createTodo }) => {
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
 
@@ -16,7 +16,7 @@ const TodoForm = ({ receiveTodo }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    receiveTodo({
+    createTodo({
       title,
       body,
       done: false,
