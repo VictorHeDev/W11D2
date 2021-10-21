@@ -2,7 +2,7 @@ import TodoListItem from '../todo_list/TodoListItem';
 import TodoForm from '../todo_list/TodoForm';
 import { useEffect } from 'react';
 
-const TodoList = ({ todos, receiveTodo, fetchTodos, createTodo }) => {
+const TodoList = ({ todos, receiveTodo, fetchTodos, createTodo, errors }) => {
   useEffect(() => {
     fetchTodos();
   }, [])
@@ -14,7 +14,7 @@ const TodoList = ({ todos, receiveTodo, fetchTodos, createTodo }) => {
           <TodoListItem key={todo.id} todo={todo} receiveTodo={receiveTodo} />
         ))}
       </ul>
-      <TodoForm createTodo={createTodo} />
+      <TodoForm createTodo={createTodo} errors={errors} />
     </div>
   )
 }

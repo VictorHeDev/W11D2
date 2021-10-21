@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { uniqueId } from '../../util';
 
 
-const TodoForm = ({ createTodo }) => {
+const TodoForm = ({ createTodo, errors }) => {
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
 
@@ -29,6 +29,9 @@ const TodoForm = ({ createTodo }) => {
 
   return (
     <form onSubmit={handleSubmit}>
+      <ul>
+        { errors.map((error, i) => <li key={i}>{error}</li>) }
+      </ul>
       <label>Title:
         <input type="text" value={title} onChange={handleTitleChange} />
       </label>
