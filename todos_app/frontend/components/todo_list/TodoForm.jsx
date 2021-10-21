@@ -21,6 +21,9 @@ const TodoForm = ({ createTodo }) => {
       body,
       done: false,
       id: uniqueId()
+    }).then(() => {
+      setTitle("");
+      setBody("");
     })
   }
 
