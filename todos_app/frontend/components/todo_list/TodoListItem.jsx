@@ -2,7 +2,7 @@ import TodoDetailViewContainer from "./TodoDetailViewContainer";
 import { useState } from 'react';
 
 
-const TodoListItem = ({ todo, receiveTodo }) => {
+const TodoListItem = ({ todo, updateTodo }) => {
   const [detail, setDetail] = useState(false);
 
   const toggleTodo = () => {
@@ -11,7 +11,7 @@ const TodoListItem = ({ todo, receiveTodo }) => {
       todo,
       { done: !todo.done}
     );
-    receiveTodo(toggledTodo);
+    updateTodo(toggledTodo);
   }
 
 

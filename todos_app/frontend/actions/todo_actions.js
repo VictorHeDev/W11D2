@@ -34,3 +34,12 @@ export const createTodo = (todo) => {
     );
   };
 };
+
+export const updateTodo = (todo) => {
+  return (dispatch) => {
+    return APIUtil.updateTodo(todo).then(
+      (todo) => dispatch(receiveTodo(todo)),
+      (err) => dispatch(receiveErrors(err.responseJSON))
+    );
+  };
+};
