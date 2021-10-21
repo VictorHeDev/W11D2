@@ -43,3 +43,12 @@ export const updateTodo = (todo) => {
     );
   };
 };
+
+export const deleteTodo = (todo) => {
+  return (dispatch) => {
+    return APIUtil.deleteTodo(todo).then(
+      (todo) => dispatch(removeTodo(todo)),
+      (err) => dispatch(receiveErrors(err.responseJSON))
+    );
+  };
+};

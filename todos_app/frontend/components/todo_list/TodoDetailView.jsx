@@ -1,9 +1,9 @@
 import StepListContainer from "../step_list/StepListContainer";
 
-const TodoDetailView = ({ todo, removeTodo }) => {
+const TodoDetailView = ({ todo, deleteTodo }) => {
 
   const handleDelete = () => {
-    removeTodo(todo);
+    deleteTodo(todo);
   }
 
   return (

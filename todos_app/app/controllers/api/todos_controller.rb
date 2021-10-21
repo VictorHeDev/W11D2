@@ -28,7 +28,11 @@ class Api::TodosController < ApplicationController
 
   def destroy
     @todo = Todo.find_by(id: params[:id])
-    @todo.destroy if @todo
+    if @todo && @todo.destroy
+      render json: @todo
+    else
+      render json: ["Could not delete"], status: 422
+    end
   end
 
   private
