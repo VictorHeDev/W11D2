@@ -6,8 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Todo.create!(title: 'Eat with Mansoo', body: 'Sushi')
-Todo.create!(title: 'Eat with Emmay', body: 'Ramen')
-Todo.create!(title: 'Eat with Stella', body: 'Banana')
-Todo.create!(title: 'Eat with Victor', body: 'a s s')
+td1 = Todo.create!(title: 'Eat with Mansoo', body: 'Sushi')
+td2 = Todo.create!(title: 'Eat with Emmay', body: 'Ramen')
+td3 = Todo.create!(title: 'Eat with Stella', body: 'Banana')
+td4 = Todo.create!(title: 'Eat with Victor', body: 'a s s')
 
+Step.create!(title: "Come to Florida", description: "avoid alligators", todo_id: td1.id)
+Step.create!(title: "Go to Disney", description: "Magic kingdom", todo_id: td1.id)
+Step.create!(title: "Pull up to BK", description: "don't forget daby", todo_id: td3.id)
